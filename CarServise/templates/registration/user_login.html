@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+    Вход
+{% endblock %}
+{% block css_additional %}
+<link rel="stylesheet" href="{% static 'regist/css/register.css' %}">
+
+{% endblock %}
+
+{% block content %}
+    <section class="container">
+
+        <div class="login-container">
+            <img class="gear gear-one" src="{% static 'main/img/gear_1.png' %}" alt=""/>
+            <div class="form-container">
+                <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png" alt="illustration" class="illustration" />
+                <h1 class="opacity">Вход</h1>
+                <form action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+
+                    <input type="text"  name="username" id="password-input" placeholder="Псевдоним" />
+                    <input type="password" name="password" id="password-input" placeholder="Пароль" />
+                    {% if form.errors %}
+                        <h6>{{ form.errors }}</h6>
+                    {% endif %}
+                    <button type="submit" class="opacity">Войти</button>
+
+                </form>
+                <div class="register-forget opacity">
+                    <a href="{% url 'register' %}">Регистрация</a>
+                    <a href="{% url 'password_reset' %}">Востановить пароль</a>
+                </div>
+
+            </div>
+         <img class="gear gear-two" src="{% static 'main/img/gear_2.png' %}" alt="">
+        </div>
+
+    </section>
+
+{% endblock %}

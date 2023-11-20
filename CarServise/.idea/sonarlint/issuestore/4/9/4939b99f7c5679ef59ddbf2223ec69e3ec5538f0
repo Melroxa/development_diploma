@@ -1,0 +1,28 @@
+
+wpython:S1192ô"_Define a constant instead of duplicating this literal "_fk_%(to_table)s_%(to_column)s" 3 times.(ÉÖçs
+rpython:S3776Î"TRefactor this function to reduce its Cognitive Complexity from 23 to the 15 allowed.(†…èÿÿÿÿÿ
+mpython:S3776¡"TRefactor this function to reduce its Cognitive Complexity from 21 to the 15 allowed.(‡’æ
+Fpython:S1172õ"-Remove the unused function parameter "field".(ØÓŞ½
+Kpython:S1172ü"-Remove the unused function parameter "field".(øóñûÿÿÿÿÿ
+Kpython:S1172Œ"-Remove the unused function parameter "field".(óıÎ¯øÿÿÿÿ
+rpython:S3776”"TRefactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.(„×ÒÉùÿÿÿÿ
+rpython:S3776»"TRefactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.(«¼ ´ûÿÿÿÿ
+Kpython:S1172ì"-Remove the unused function parameter "model".(Îü¸ûÿÿÿÿ
+Zpython:S1172ÿ"<Remove the unused function parameter "old_db_table_comment".(Ó­®ÿÿÿÿÿ
+lpython:S3776“"TRefactor this function to reduce its Cognitive Complexity from 18 to the 15 allowed.(Ìœ…
+rpython:S3776É"TRefactor this function to reduce its Cognitive Complexity from 98 to the 15 allowed.(Ö­Êşÿÿÿÿ
+Epython:S1172£	"-Remove the unused function parameter "model".(õúã3
+Ipython:S1172£	"1Remove the unused function parameter "old_field".(õúã3
+Kpython:S1172À	"-Remove the unused function parameter "model".(³ûÿÿÿÿÿÿ
+Opython:S1172À	"1Remove the unused function parameter "old_field".(³ûÿÿÿÿÿÿ
+Npython:S1172”
+"0Remove the unused function parameter "new_type".(Æ„„ úÿÿÿÿ
+Lpython:S1172¢
+".Remove the unused function parameter "strict".(¿ÅğÍşÿÿÿÿ
+Kpython:S1172¢
+"-Remove the unused function parameter "model".(¿ÅğÍşÿÿÿÿ
+Ipython:S1172À"1Remove the unused function parameter "opclasses".(ƒ›z
+Kpython:S1172ô"-Remove the unused function parameter "model".(ìñ­ ùÿÿÿÿ
+mpython:S3776Ô"TRefactor this function to reduce its Cognitive Complexity from 35 to the 15 allowed.(öâàÁ
+Kpython:S1172"2Remove the unused function parameter "table_name".(’¤â±
+Npython:S1172"5Remove the unused function parameter "old_collation".(’¤â±
