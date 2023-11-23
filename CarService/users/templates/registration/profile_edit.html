@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Изменение
+{% endblock %}
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'regist/css/register.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+    <section class="container">
+
+        <div class="login-container">
+            <div class="circle circle-one"></div>
+            <div class="form-container">
+                <h1 class="opacity">Изменение</h1>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                {{ form.as_p }}
+{#                    <input type="text" name="username" placeholder="Псевдоним" value="{{ profile.slug }}"/>#}
+{#                    <input type="text" name="email" placeholder="email" value="{{ profile.email }}"/>#}
+{#                <div class="full-name" >#}
+{#                    <input type="text" name="first_name" placeholder="Имя" value="{{ profile.user.first_name }}"/>#}
+{#                    <input type="text" name="last_name" placeholder="Фамилия"value="{{ profile.user.last_name }}" />#}
+{#                </div>#}
+{#                    <input type="date" name="birth_date" placeholder="Дата рождения" value="{{ user.birth_date }}">#}
+{#                <div class="avatar-form">#}
+{#                    <lablel>Фото профиля</lablel> <img src="{{ profile.avatar.url }}" alt="">#}
+{#                    <input type="checkbox" name="avatar-clear" id="avatar-clear_id">#}
+{#                    <lablal id="avatar-clear_id">очистить</lablal>#}
+{#                 </div>#}
+{#                    <input type="file" name="avatar">#}
+
+                    <button type="submit" class="opacity">подтвердить изменения
+                    </button>
+                    {% if form.errors %}
+                        <p>{{ form.errors }}</p>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+
+
+    </section>
+
+{% endblock %}

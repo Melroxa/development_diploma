@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="{% static 'base/img/logo-16x16.ico' %}"
+          type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'base/base.css' %}">
+    <script src="{% static 'base/base.js' %}" defer></script>
+    {% block css_additional %}{% endblock %}
+
+</head>
+<body>
+{% block header %}
+    <header class="header-section">
+    <div class="container__nav">
+    <div class="header">
+    <button class="header__burger" id="burger">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="header-logo">
+        <img class="header-logo__img" src="{% static 'base/img/logo.svg' %}"
+             alt="Шестеренка счастья">
+        {#    <h3>Шестеренка счастья</h3>#}
+    </div>
+    <nav class="nav-main">
+        <ul class="nav-main__list">
+            <li class="nav-main__item">
+
+                <a href="{% url 'home' %}" class="nav-main__link">Главная</a>
+            </li>
+            <li class="nav-main__item">
+                <a href="{% url 'about' %}" class="nav-main__link">О
+                    нас</a>
+            </li>
+            <li class="nav-main__item">
+                <a href="" class="nav-main__link">Услуги</a>
+            </li>
+            <li class="nav-main__item">
+                <a href="#" class="nav-main__link">Новости</a>
+            </li>
+            <li class="nav-main__item">
+                <div class="dropdown-contact">
+                    <button onclick="myFunction()" class="drop-btn__contact">
+                        Контакты
+                    </button>
+                    <div id="myDropdown" class="dropdown-content__contact">
+                        <p>+7 (955)935 21-99</p>
+                        <p>3-я Нагорная ул., 93, Кемерово, Кемеровская обл., 650044</p>
+{#                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1449.7717908202276!2d86.08389581222708!3d55.40534549627572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42d80a239f48c8a1%3A0x31aa9dfd0acb4b50!2z0JDQu9C00Lg!5e0!3m2!1sru!2sru!4v1699006721406!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>#}
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+    </nav>
+    {% if user.is_authenticated %}
+        <div class="dropdown">
+  <button onclick="myFunctionUser()" class="dropbtn"><i class="fa-solid fa-user" style="color: #e0e0e0;"></i></button>
+  <div id="myDropdownUser" class="dropdown-content">
+    <p>Профиль: {{ user }}</p>
+    <a href="{% url 'profile_detail' slug=user.profile.slug %}">Профиль</a>
+    <a href="{% url 'logout' %}">Выйти</a>
+  </div>
+</div>
+
+    {% else %}
+        <div class="dropdown">
+
+        <a href="{% url "login" %}" class="link__dropdown">Войти</a>
+
+    {% endif %}
+
+{% endblock %}
+</div>
+</div>
+</div>
+</header>
+
+<div id="massages-sections">
+    {% if messages %}
+        <input class="input-massages" type="button" id="hider" value="скрыть">
+        <ul class="messages" id="messages">
+            {% for message in messages %}
+                <li{% if message.tags %}
+                    class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+
+{% block content %}{% endblock %}
+<script src="https://kit.fontawesome.com/0536120956.js"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
